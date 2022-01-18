@@ -1,3 +1,4 @@
+import imp
 import pygame
 import os
 from game import Game
@@ -6,11 +7,14 @@ from bullet import Bullet
 import parameters
 import time
 import random
+from menu import main_menu
 FPS= 60
 #create de characters
 #game.enemies[random.randrange(0, 1)].shooting()
 
 player_type = {0: 'shooter', 1:'archer', 2:'bomber'}
+
+
 
 WIDTH , HEIGHT= 1200,600
 WIN = pygame.display.set_mode((WIDTH , HEIGHT))#display the window
@@ -21,6 +25,7 @@ black= (0,0,0)
 background1= pygame.transform.scale(pygame.image.load(os.path.join("images","background.png")),(WIDTH,HEIGHT))
     
 def main():
+    main_menu()
     clock=pygame.time.Clock()
     run = True
     game = Game(background1, 1)
